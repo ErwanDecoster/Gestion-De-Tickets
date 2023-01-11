@@ -1,0 +1,330 @@
+h1{
+  margin: 0;
+  text-align: center;
+}
+.hamburger_open{
+  transition: .2s;
+  z-index: 4;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+.hamburger_open span{
+  position: absolute;
+  width: 70%;
+  height: 5px;
+  border-radius: 10px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+}
+.hamburger_open span::before,.hamburger_open span::after{
+  display: block;
+  content: '';
+  position: absolute;
+  background-color: #333;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+}
+.hamburger_open span::before{
+  transform: rotate(45deg);
+}
+.hamburger_open span::after{
+  transform: rotate(-45deg);
+}
+.hamburger{
+  background-color: inherit;
+  border: none;
+  transition: .2s;
+  z-index: 4;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+.hamburger span{
+  position: absolute;
+  background-color: #333;
+  width: 70%;
+  height: 5px;
+  border-radius: 10px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+}
+.hamburger span::before,.hamburger span::after{
+  display: block;
+  content: '';
+  position: absolute;
+  background-color: #333;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+}
+.hamburger span::before{
+  top: -14px;
+  left: -8px
+}
+.hamburger span::after{
+  top: 14px;
+  left: 8px;
+}
+nav.default{
+  min-width: 300px;
+  width: 330px;
+  height: 100vh;
+}
+nav.open{
+  z-index: 2;
+  position: fixed;
+  padding: 20px 20%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+li p.statut{
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  width: 100%;
+}
+div.statut{
+  margin-top: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+p.statut.pending{
+  background-color: #DB5461;
+}
+p.statut.open{
+  background-color: #76BED0;
+}
+main{
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 60px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px 0px rgba(199,199,199,1);
+  overflow-y: scroll;
+}
+@media screen and (max-width: 960px){
+  main{
+    padding: 30px;
+  }
+}
+section{
+  box-shadow: 0px 0px 15px 0px rgba(199,199,199,1);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ticket{
+  min-width: 100%;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: .25s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ticket.closed{
+  padding: 4px;
+}
+.ticket p{
+  text-align: left;
+  font-size: 16px;
+  position: relative;
+  padding: 0 10px;
+}
+.ticket.closed p::after,.ticket .basic_information p::after{
+  display: block;
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  height: calc(100% + 8px);
+  background-color: #ccc;
+  width: 1px;
+}
+.ticket p.name{
+  padding-left: 6px;
+  background-color: #EFCEFA;
+  background-color: #f6a5ebbb;
+  min-width: 140px;
+  width: 140px;
+}
+.ticket p.compagnie_service{
+  min-width: 220px;
+}
+.ticket p.affected_device{
+  min-width: 150px;
+}
+.ticket p.date_creation{
+  background-color: #fddf7ebb;
+}
+.ticket p.max_date_end{
+  background-color: #67ebfabb;
+}
+.ticket p.days_left{
+  min-width: 145px;
+}
+.ticket:first-of-type{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.ticket:last-of-type{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.ticket.opened{
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  background-color: #fff;
+  border-width: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  min-width: inherit;
+  height: auto;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0px 0px 15px 0px rgba(150,150,150,1);
+}
+@media screen and (max-width: 960px){
+  .ticket.opened{
+    min-width: 96%;
+  }
+}
+.grabzone{
+  position: relative;
+  height: 24px;
+  display: flex;
+  flex-direction: row-reverse;
+  user-select: none;
+  cursor: grab;
+}
+.close_button{
+  margin: 2px 2px 0 0;
+  background-color: inherit;
+  border: none;height: 24px;
+  width: 24px;
+  position: relative;
+  transition: .2s;
+}
+.close_button:hover,.close_button:active,.close_button:focus{
+  background-color: #ffaaaa70;
+}
+.close_button::after,.close_button::before{
+  display: block;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+}
+.close_button::after{
+  transform: translate(-50%,-50%) rotateZ(45deg);
+}
+.close_button::before{
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.basic_information{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.complet_information,.problem_information{
+  padding: 6px 0;
+  position: relative;
+}
+.ticket .problem_description{
+  margin-top: 10px;
+  padding: 10px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+.ticket div{
+  margin: 0 4px;
+}
+.ticket .movable_zone,.ticket .movable_zone div{
+  margin: 0;
+}
+.ticket div::after{
+  display: block;
+  content: "";
+  width: calc(100% + 8px);
+  height: 1px;
+  position: absolute;
+  bottom: -5px;
+  left: -4px;
+  background-color: #ccc;
+}
+p button{
+  transition: .2s;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+p button:hover,p button:active,p button:focus{
+  color: #445EF2;
+}
+.popupCopy{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  display: block;
+  content: '';
+  height: 24px;
+  width: 100px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  transition: .2s;
+  color: #333;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px rgba(199,199,199,1);
+  border-radius: 10px;
+  pointer-events: auto;
+}
+div.attached_file{
+  margin: 10px 0 0;
+  display: flex;
+}
+div.attached_file p{
+  padding: 0 0 0 10px;
+  margin-right: 10px;
+}
+.file_icon{
+}
+.file_icon img{
+  width: 28px;
+  transition: .2s;
+}
+.file_icon:hover img{
+  filter: invert(.3) sepia(1) hue-rotate(200deg) saturate(1000%);
+}

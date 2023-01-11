@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/add_tickets.css">
+    <title>Ajouter un ticket</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Accueil</a></h1>
+    <div class="container">
+      <label for="company">Entreprise :</label>
+      <select name="company" id="company" required>
+        <option value="McDonald's">McDonald's</option>
+        <option value="Lidl">Lidl</option>
+        <option value="Fsociety">Fsociety</option>
+      </select>
+      <label for="user_input">Utilisateur :</label>
+      <input list="user" name="" value="" id="user_input">
+      <datalist name="user" id="user" required>
+        <option value="Loise Archer"></option>
+        <option value="Erwan Decoster"></option>
+        <option value="Sarah Decoster"></option>
+      </datalist>
+      <a class="secondary_style" href="profils_manager.html">Ajouter un utilisateur</a>
+      <button id="btnOpenTicket" class="primary_style">Crée un ticket</button>
+    </div>
+    <div class="ticket opened">
+      <h2>Créer un ticket</h2>
+      <p>
+        <label for="nb_persons_concerned">Personnes concernées :</label>
+        <input type="number" value="1" id="nb_persons_concerned">
+      </p>
+      <p>
+        <label for="affected_device">Appareil concerné :</label>
+        <select id="affected_device" required>
+          <option value="ordinateur">ordinateur</option>
+          <option value="ecran">ecran</option>
+          <option value="imprimante">imprimante</option>
+          <option value="souris">souris</option>
+        </select>
+      </p>
+      <p>
+        <label for="affected_app_input">Application concerné :</label>
+        <input list="affected_app" type="text" id="affected_app_input">
+        <datalist name="affected_app" id="affected_app">
+          <option value="Word">Word</option>
+          <option value="Photoshop">Photoshop</option>
+          <option value="Adobe XD">Adobe XD</option>
+          <option value="Figma">Figma</option>
+        </datalist>
+      </p>
+      <p>
+        <label for="">Description du problème :</label>
+      </p>
+      <textarea name="name" rows="8" cols="80"></textarea>
+      <div class="attached_file">
+        <p class="attached_file">Joindre des fichier :</p>
+      </div>
+      <div class="button">
+        <button id="btnCloseTicket" class="secondary_style">Annuler</button>
+        <a class="primary_style" href="add_tickets.html">Créer</a>
+      </div>
+    </div>
+    <script type="text/javascript">
+    body = document.querySelector("body")
+    addTicket = document.querySelector(".ticket.opened")
+    btnOpenTIcket = document.querySelector("#btnOpenTicket")
+    btnCloseTicket = document.querySelector("#btnCloseTicket")
+
+    btnOpenTIcket.addEventListener('click', () =>{
+      addTicket.style.display = "flex"
+      setTimeout(() => { addTicket.style.transform = "translate(-50%, -50%) scale(1)"; }, 200);
+    })
+    btnCloseTicket.addEventListener('click', () =>{
+      addTicket.style.transform = "translate(-50%, -50%) scale(0)";
+      setTimeout(() => { addTicket.style.display = "none" }, 200);
+
+    })
+    </script>
+  </body>
+</html>

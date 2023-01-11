@@ -1,0 +1,82 @@
+body{
+  height: 100vh;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(199,199,199,1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+input,select{
+  border: solid 1px #333;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 120px;
+  width: 160px;
+  height: 28px;
+  text-transform: capitalize;
+}
+input{
+  padding: 2px 4px;
+}
+a{
+  text-align: center;
+}
+label{
+  font-weight: bold;
+  width: 160px;
+}
+.ticket.opened{
+  padding: 10px 10px 20px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 70%;
+  height: auto;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0px 0px 15px 0px rgba(150,150,150,1);
+  display: none;
+  transition: .25s;
+}
+@media screen and (max-width: 960px){
+  .ticket.opened{
+    min-width: 96%;
+  }
+}
+h2{
+  margin-bottom: 10px;
+}
+div.attached_file{
+  display: flex;
+}
+div.attached_file p{
+  padding: 0 0 0 10px;
+  margin-right: 10px;
+}
+.file_icon img{
+  width: 28px;
+  transition: .2s;
+}
+.file_icon:hover img{
+  filter: invert(.3) sepia(1) hue-rotate(200deg) saturate(1000%);
+}
+.button{
+  width: 160px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

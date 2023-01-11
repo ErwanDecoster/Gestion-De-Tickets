@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gestion de ticket</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/view_tickets.css">
+  </head>
+  <body>
+    <button class="hamburger_open" id="burger">
+      <span></span>
+    </button>
+    <nav>
+      <h2>Entreprise</h2>
+      <ul>
+        <li>
+          <a href="#">McDonald's
+            <div class="statut">
+              <p class="statut open">3 ouvert</p>
+              <p class="statut pending">4 en attente</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">Lidl
+            <div class="statut">
+              <p class="statut open">1 ouvert</p>
+              <p class="statut pending">0 en attente</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">Fsociety
+            <div class="statut">
+              <p class="statut open">0 ouvert</p>
+              <p class="statut pending">1 en attente</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Gestion De Tickets</h1>
+      <section>
+        <h3>Tickets ouvert</h3>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonald's - Comptabiliter</p>
+          <p class="affected_device">Imprimante</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 38</p>
+          <span class="statut resolved"></span>
+        </button>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonald's - RH</p>
+          <p class="affected_device">Ecran ordinateur</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 5</p>
+          <span class="statut open"></span>
+        </button>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonald's - Drive</p>
+          <p class="affected_device">Paneau affichage</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 8</p>
+          <span class="statut open"></span>
+        </button>
+      </section>
+      <section>
+        <h3>Tickets en attente</h3>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonald's - Comptabiliter</p>
+          <p class="affected_device">Imprimante</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 38</p>
+          <span class="statut resolved"></span>
+        </button>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonald's - RH</p>
+          <p class="affected_device">Ecran ordinateur</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 5</p>
+          <span class="statut open"></span>
+        </button>
+        <button class="ticket closed">
+          <p class="name">Erwan Decoster</p>
+          <p class="compagnie_service">McDonal's - Drive</p>
+          <p class="affected_device">Paneau affichage</p>
+          <p class="date_creation">08/04/2021</p>
+          <p class="max_date_end">25/04/2021</p>
+          <p class="days_left">Jours restant : 8</p>
+          <span class="statut open"></span>
+        </button>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script type="text/javascript">
+
+    function copyMe(txt) {
+      txtCopy = txt.innerText.replaceAll(" ", "");
+      // txt = txt.innerText.replace("texte copié", "");
+      navigator.clipboard.writeText(txtCopy);
+      let popup = document.createElement("span")
+      popup.classList.add("popupCopy")
+      popup.innerHTML = "texte copié"
+      txt.appendChild(popup);
+      popup.style.transform = "translate(-50%, -100%) scale(0)";
+      setTimeout(() => { popup.style.transform = "translate(-50%, -100%) scale(1)"; }, 200);
+      setTimeout(() => { popup.style.transform = "translate(-50%, -100%) scale(0)"; }, 1000);
+      setTimeout(() => { popup.remove(); }, 1500);
+
+    }
+
+    </script>
+    <script type="text/javascript">
+
+    </script>
+
+    <!-- <script type="text/javascript">
+    const ticket = document.querySelectorAll(".closed");
+    function openTicket(thisi) {
+      let salut = document.getElementById(thisi)
+
+      let client_information = document.createElement("div")
+      client_information.classList.add("client_information");
+
+      let compagnie_service = document.createElement("p");
+      compagnie_service.classList.add("compagnie_service");
+      compagnie_service.innerHTML = "McDonald's - Comptabiliter";
+      let phone_number = document.createElement("p");
+      phone_number.classList.add("phone_number");
+      phone_number.innerHTML = "tel : 06 25 30 68 13";
+      let email = document.createElement("p");
+      email.classList.add("email");
+      email.innerHTML = "Email : erwan.decoster.pro@gmail.com";
+      let teamviewer_id = document.createElement("p");
+      teamviewer_id.classList.add("teamviewer_id");
+      teamviewer_id.innerHTML = "Id TeamViewer : 123 456 789";
+
+      client_information.appendChild(compagnie_service);
+      client_information.appendChild(phone_number);
+      client_information.appendChild(email);
+      client_information.appendChild(teamviewer_id);
+      salut.appendChild(client_information);
+      salut.className = "ticket opened";
+      salut.setAttribute("onclick", "");
+
+      // for (var i = 0; i < 9; i++) {
+      //   let oui[i] = document.getElementById(ticket[i])
+      //   oui.className = "ticket closed";
+      // }
+    };
+
+    // récupération des éléments dans le html
+      const button = document.getElementById("idButton");
+      const removeButton = document.getElementById("removeButton");
+      const inputs = document.getElementsByTagName("input");
+      const buttonBefore = document.getElementById("buttonDiv");
+      let divChamps = document.getElementById("divChamps");
+      // supression button
+      function deleteSubm(parentId) {
+        const removableItem = document.getElementById(parentId);
+        while (removableItem.firstChild) {
+          removableItem.removeChild(removableItem.firstChild);
+        }
+        if (removableItem.parentNode) {
+          removableItem.parentNode.removeChild(removableItem);
+        }
+      }
+      // add bouton
+      ticket.addEventListener("click", function() {
+          // création de la div de base
+          let compagnie_service = document.createElement("p");
+          compagnie_service.classList.add("compagnie_service");
+
+          ticket.appendChild(compagnie_service);
+
+          // création de l'input texte
+          let input = document.createElement("input");
+          input.type = "text";
+          input.id = "player"+inputs.length;
+          input.name = "playerName"+inputs.length;
+          input.value = "";
+          input.minLength = "3";
+          input.maxLength = "17";
+          input.autocomplete = "off";
+          input.required =  "required";
+          // création du label lié à l'input texte
+          let label = document.createElement("label");
+          label.htmlFor = input.id;
+          label.textContent = inputs.length>0?"Joueur "+inputs.length:"Joueur";
+          let button = document.createElement("button");
+          button.classList.add("remove_button");
+          button.type = "button";
+          button.name = "button";
+          //button.setAttribute("deleteSubm(this.parentNode.id)");
+          button.setAttribute("onclick", "deleteSubm(this.parentNode.id)");
+          // On ajoute les éléments créé à la div de base
+          div.appendChild(input);
+          div.appendChild(label);
+          div.appendChild(button);
+          // On ajoute la div de base à la div mère
+          divChamps.insertBefore(div, buttonBefore);
+      });
+
+
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/profils_manager.css">
+    <title>Ajouter un ticket</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Accueil</a></h1>
+    <div class="add_profil">
+      <h2>Créer un utilisateur</h2>
+      <p>
+        <label for="company">Entreprise :</label>
+        <select name="company" id="company" required>
+          <option value="McDonald's">McDonald's</option>
+          <option value="Lidl">Lidl</option>
+          <option value="Fsociety">Fsociety</option>
+        </select>
+      </p>
+      <p>
+        <label for="name">Prenom :</label>
+        <input type="text" value="" id="name">
+      </p>
+      <p>
+        <label for="surname">Nom :</label>
+        <input type="text" name="" value="" id="surname">
+      </p>
+      <p>
+        <label for="department">Service :</label>
+        <input list="department_list" name="" value="" id="department" autocomplete="off" required>
+        <datalist name="department_list" id="department_list">
+          <option value="Comptabilité"></option>
+          <option value="RH - Ressources Humaines"></option>
+          <option value="Finance"></option>
+          <option value="Technicien"></option>
+          <option value="Directeur"></option>
+        </datalist>
+      </p>
+      <p>
+        <label for="phone_number">N° telephone:</label>
+        <input type="tel" name="" value="" id="phone_number">
+      </p>
+      <p>
+        <label for="email">Email :</label>
+        <input type="email" name="" value="" id="email">
+      </p>
+      <p>
+        <label for="TeamViewer_Id">Id TeamViewer :</label>
+        <input type="email" name="" value="" id="TeamViewer_Id">
+      </p>
+      <div class="button">
+        <a class="primary_style" href="add_tickets.html">Créer</a>
+      </div>
+    </div>
+    </script>
+  </body>
+</html>
